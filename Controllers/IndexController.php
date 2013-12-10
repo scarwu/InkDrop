@@ -1,6 +1,6 @@
 <?php
 /**
- * Administrator Controller
+ * Index Controller
  * 
  * @package		InkDrop
  * @author		ScarWu
@@ -9,16 +9,16 @@
  * @link		https://github.com/scarwu/InkDrop
  */
 
-class AdministratorController extends \CLx\Core\Controller {
+class IndexController extends \CLx\Core\Controller {
 
 	public function __construct() {
 		parent::__construct();
 	}
 	
-	/**
-	 * Load service list
-	 */
 	public function read() {
-		\CLx\Core\Loader::view('Administrator');
+		if(file_exists(CLX_APP_ROOT . 'InkDrop.sqlite3'))
+			\CLx\Core\Loader::view('Installation');
+		else
+			\CLx\Core\Loader::view('Administrator');
 	}
 }

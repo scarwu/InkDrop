@@ -14,6 +14,6 @@
  */
 $Database['development'] = array(
 	'type' => 'sqlite',
-	'path' => CLX_APP_ROOT . 'database.sqlite',
-	'name' => 'rnfs'
+	'path' => CLX_APP_ROOT . 'InkDrop.sqlite3',
+	'name' => 'ink_drop'
 );

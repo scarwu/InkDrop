@@ -1,6 +1,6 @@
 <?php
 /**
- * Language en
+ * Language zh_TW
  * 
  * @package		InkDrop
  * @author		ScarWu
@@ -9,4 +9,4 @@
  * @link		https://github.com/scarwu/InkDrop
  */
 
-$Language['en'] = array();
+$Language['zh_TW'] = array();

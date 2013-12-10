@@ -29,7 +29,7 @@ $Route['get'] = array(
 			\CLx\Core\Response::setCode(503);
 	}, TRUE),
 	array('default', function() {
-		\CLx\Core\Loader::controller('Administrator', 'read');
+		\CLx\Core\Loader::controller('Index', 'read');
 	})
 );
 
