@@ -1,6 +1,6 @@
 <?php
 /**
- * Dashboard Controller
+ * Administrator Controller
  * 
  * @package		InkDrop
  * @author		ScarWu
@@ -9,7 +9,7 @@
  * @link		https://github.com/scarwu/InkDrop
  */
 
-class DashboardController extends \CLx\Core\Controller {
+class AdministratorController extends \CLx\Core\Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -19,6 +19,6 @@ class DashboardController extends \CLx\Core\Controller {
 	 * Load service list
 	 */
 	public function read() {
-		\CLx\Core\Loader::view('Dashboard');
+		\CLx\Core\Loader::view('Administrator');
 	}
 }
