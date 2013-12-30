@@ -4,11 +4,11 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
+var express = require('express'),
+	routes = require('./routes'),
+	post = require('./routes/post'),
+	http = require('http'),
+	path = require('path');
 
 var app = express();
 
@@ -30,8 +30,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
-	console.log('Express server listening on port ' + app.get('port'));
+app.all('/ajax/posts(/*)?', post.list);
+
+http.createServer(app).listen(app.get('port'), function() {
+	console.log('InkDrop listening on port ' + app.get('port'));
 });
