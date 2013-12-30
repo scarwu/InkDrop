@@ -1,6 +1,6 @@
-# Ink Drop
+# InkDrop
 
-Ink Drop Blog System
+InkDrop Blog System
 
 ## Getting Started
 

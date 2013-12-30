@@ -16,9 +16,9 @@ class IndexController extends \CLx\Core\Controller {
 	}
 	
 	public function read() {
-		if(file_exists(CLX_APP_ROOT . 'InkDrop.sqlite3'))
-			\CLx\Core\Loader::view('Installation');
-		else
+		// if(file_exists(CLX_APP_ROOT . 'InkDrop.sqlite3'))
+		// 	\CLx\Core\Loader::view('Installation');
+		// else
 			\CLx\Core\Loader::view('Administrator');
 	}
 }
