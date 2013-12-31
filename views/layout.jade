@@ -1,7 +1,17 @@
-doctype
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/inkdrop.css')
-  body
-    block content
+doctype html
+html(lang='zh-tw')
+head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    
+    title= 'InkDrop'
+    
+    link(rel='stylesheet' href='/stylesheet/normalize.css')
+    link(rel='stylesheet' href='/stylesheet/inkdrop.css')
+
+    script(src='/javascripts/vendor/modernizr.custom-2.7.1.min.js')
+
+body
+    script(src='/javascripts/vendor/backbone-1.1.0.min.js')
+    script(src='/javascripts/vendor/jquery-2.0.3.min.js')
+    script(src='/javascripts/vendor/inkdrop.js')
