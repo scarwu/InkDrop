@@ -5,10 +5,11 @@
  */
 
 var express = require('express'),
-	routes = require('./routes'),
-	post = require('./routes/post'),
 	http = require('http'),
 	path = require('path');
+
+var routes = require('./routes'),
+	post = require('./routes/post');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only

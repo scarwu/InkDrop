@@ -12,7 +12,7 @@
 	"dependencies": {
 		"express": "3.4.7",
 		"jade": "*",
-		"less": "*",
+		"less-middleware": "*",
 		"sqlite3": "*",
 		"markdown": "*",
 		"highlight.js": "*"
