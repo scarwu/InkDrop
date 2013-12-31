@@ -12,7 +12,7 @@ html(lang='zh-tw')
 
 		script(src='/javascripts/vendor/modernizr-2.7.1-custom.min.js')
 	body
-		div(class='main')
+		div(id='main')
 			header
 				h1='InkDrop'
 			nav
@@ -24,9 +24,12 @@ html(lang='zh-tw')
 					span='Settings'
 				a(href="#/logout")
 					span='Logout'
+			div(id='content')
 
-		script(src='/javascripts/vendor/backbone-1.1.0.min.js')
+		
 		script(src='/javascripts/vendor/jquery-2.0.3.min.js')
+		script(src='/javascripts/vendor/underscore-1.5.2.min.js')
+		script(src='/javascripts/vendor/backbone-1.1.0.min.js')
 		script(src='/javascripts/vendor/markdown-0.6.0-beta1.min.js')
 		script(src='/javascripts/vendor/highlight-7.5.pack.js')
 		script(src='/javascripts/inkdrop.js')
