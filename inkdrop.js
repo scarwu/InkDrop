@@ -27,6 +27,11 @@ inkdrop.use(require('less-middleware')({
 	compress: true
 }));
 
+inkdrop.use(require('connect-coffee-script')({ 
+	src: path.join(__dirname, 'public'),
+	compress: true
+}));
+
 inkdrop.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -45,7 +50,7 @@ http.createServer(inkdrop).listen(inkdrop.get('port'), function() {
 
 // LiveReload
 var livereload = require('livereload').createServer({
-	exts: ['less', 'jade']
+	exts: ['less', 'jade', 'coffee']
 });
 livereload.watch(__dirname + '/public');
 livereload.watch(__dirname + '/views');

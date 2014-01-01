@@ -13,6 +13,7 @@
 		"express": "3.4.7",
 		"jade": "*",
 		"less-middleware": "*",
+		"connect-coffee-script": "*",
 		"livereload": "*",
 		"sqlite3": "*",
 		"markdown": "*",
