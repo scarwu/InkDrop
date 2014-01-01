@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
 var express = require('express'),
 	http = require('http'),
 	path = require('path');
@@ -11,30 +7,52 @@ var express = require('express'),
 var routes = require('./routes'),
 	post = require('./routes/post');
 
-var app = express();
+var inkdrop = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(app.router);
-app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
-app.use(express.static(path.join(__dirname, 'public')));
+inkdrop.set('port', process.env.PORT || 3000);
+inkdrop.set('views', path.join(__dirname, 'views'));
+inkdrop.set('view engine', 'jade');
+
+inkdrop.use(express.favicon());
+inkdrop.use(express.logger('dev'));
+inkdrop.use(express.json());
+inkdrop.use(express.urlencoded());
+inkdrop.use(express.methodOverride());
+
+inkdrop.use(inkdrop.router);
+
+inkdrop.use(require('less-middleware') ({ 
+	src: path.join(__dirname, 'public'),
+	compress: true
+}));
+
+inkdrop.use(require('connect-coffee-script') ({ 
+	src: path.join(__dirname, 'public'),
+	compress: true
+}));
+
+inkdrop.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
-	app.use(express.errorHandler());
+if ('development' == inkdrop.get('env')) {
+	inkdrop.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+// Route Setting
+inkdrop.get('/', routes.index);
+inkdrop.all('/ajax/dashboard(/*)?', post.list);
+inkdrop.all('/ajax/posts(/*)?', post.list);
+inkdrop.all('/ajax/settings(/*)?', post.list);
 
-app.all('/ajax/posts(/*)?', post.list);
-
-http.createServer(app).listen(app.get('port'), function() {
-	console.log('InkDrop listening on port ' + app.get('port'));
+http.createServer(inkdrop).listen(inkdrop.get('port'), function () {
+	console.log('InkDrop listening on port ' + inkdrop.get('port'));
 });
+
+// LiveReload
+var livereload = require('livereload').createServer({
+	exts: ['jade', 'less', 'coffee']
+});
+
+livereload.watch(__dirname + '/public');
+livereload.watch(__dirname + '/views');

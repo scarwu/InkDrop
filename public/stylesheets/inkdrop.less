@@ -48,9 +48,35 @@ textarea {
 }
 
 body {
-	background-color: #eeeeee;
+	background-color: #efefef;
 }
 
-#main > header {
+@page-padding: 0 100px;
+@header-height: 75px;
+
+#header {
+	padding: @page-padding;
 	background-color: #ffffff;
+	height: @header-height;
+	line-height: @header-height;
+
+	h1 {
+		margin: 0;
+	}
+}
+
+#navigation {
+	padding: @page-padding;
+	background-color: #f6f6f6;
+
+	a {
+		padding-right: 25px;
+		display: inline-block;
+		height: @header-height;
+		line-height: @header-height;
+	}
+}
+
+#container {
+	padding: @page-padding;
 }
