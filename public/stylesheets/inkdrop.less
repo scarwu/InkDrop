@@ -51,22 +51,22 @@ body {
 	background-color: #efefef;
 }
 
+@page-padding: 0 100px;
 @header-height: 75px;
 
 #header {
-	padding: 0 100px;
+	padding: @page-padding;
 	background-color: #ffffff;
 	height: @header-height;
 	line-height: @header-height;
 
 	h1 {
 		margin: 0;
-		font-size: 1.75em;
 	}
 }
 
 #navigation {
-	padding: 0 100px;
+	padding: @page-padding;
 	background-color: #f6f6f6;
 
 	a {
@@ -75,4 +75,8 @@ body {
 		height: @header-height;
 		line-height: @header-height;
 	}
+}
+
+#container {
+	padding: @page-padding;
 }

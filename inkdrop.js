@@ -22,12 +22,12 @@ inkdrop.use(express.methodOverride());
 
 inkdrop.use(inkdrop.router);
 
-inkdrop.use(require('less-middleware')({ 
+inkdrop.use(require('less-middleware') ({ 
 	src: path.join(__dirname, 'public'),
 	compress: true
 }));
 
-inkdrop.use(require('connect-coffee-script')({ 
+inkdrop.use(require('connect-coffee-script') ({ 
 	src: path.join(__dirname, 'public'),
 	compress: true
 }));
@@ -39,18 +39,20 @@ if ('development' == inkdrop.get('env')) {
 	inkdrop.use(express.errorHandler());
 }
 
+// Route Setting
 inkdrop.get('/', routes.index);
 inkdrop.all('/ajax/dashboard(/*)?', post.list);
 inkdrop.all('/ajax/posts(/*)?', post.list);
 inkdrop.all('/ajax/settings(/*)?', post.list);
 
-http.createServer(inkdrop).listen(inkdrop.get('port'), function() {
+http.createServer(inkdrop).listen(inkdrop.get('port'), function () {
 	console.log('InkDrop listening on port ' + inkdrop.get('port'));
 });
 
 // LiveReload
 var livereload = require('livereload').createServer({
-	exts: ['less', 'jade', 'coffee']
+	exts: ['jade', 'less', 'coffee']
 });
+
 livereload.watch(__dirname + '/public');
 livereload.watch(__dirname + '/views');
