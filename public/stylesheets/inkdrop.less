@@ -48,23 +48,31 @@ textarea {
 }
 
 body {
-	background-color: #eeeeee;
+	background-color: #efefef;
 }
 
-@header-hight: 075px;
+@header-height: 75px;
 
 #header {
-	background-color: #ffffff;
-	height: @header-hight;
-	line-height: @header-hight;
 	padding: 0 100px;
+	background-color: #ffffff;
+	height: @header-height;
+	line-height: @header-height;
+
 	h1 {
 		margin: 0;
-		display: inline-block;
+		font-size: 1.75em;
 	}
 }
 
 #navigation {
-	display: inline-block;
-	padding-left: @header-hight;
+	padding: 0 100px;
+	background-color: #f6f6f6;
+
+	a {
+		padding-right: 25px;
+		display: inline-block;
+		height: @header-height;
+		line-height: @header-height;
+	}
 }
