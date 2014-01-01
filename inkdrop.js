@@ -19,6 +19,7 @@ inkdrop.use(express.logger('dev'));
 inkdrop.use(express.json());
 inkdrop.use(express.urlencoded());
 inkdrop.use(express.methodOverride());
+inkdrop.use(express.static(path.join(__dirname, 'public')));
 
 inkdrop.use(inkdrop.router);
 
@@ -29,12 +30,10 @@ inkdrop.use(require('less-middleware') ({
 
 inkdrop.use(require('connect-coffee-script') ({ 
 	src: path.join(__dirname, 'public'),
-	compress: true
+	compress: true,
+	bare: true
 }));
 
-inkdrop.use(express.static(path.join(__dirname, 'public')));
-
-// development only
 if ('development' == inkdrop.get('env')) {
 	inkdrop.use(express.errorHandler());
 }
