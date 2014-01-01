@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 var express = require('express'),
-	livereload = require('livereload'),
 	http = require('http'),
 	path = require('path');
 
@@ -45,7 +44,8 @@ http.createServer(inkdrop).listen(inkdrop.get('port'), function() {
 });
 
 // LiveReload
-livereload.createServer({
-	exts: ['less', 'jade'],
-	exclusions: ['.git/', 'node_modules']
-}).watch(__dirname);
+var livereload = require('livereload').createServer({
+	exts: ['less', 'jade']
+});
+livereload.watch(__dirname + '/public');
+livereload.watch(__dirname + '/views');
