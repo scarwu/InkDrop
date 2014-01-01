@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var express = require('express'),
+	livereload = require('livereload'),
 	http = require('http'),
 	path = require('path');
 
@@ -42,3 +43,9 @@ inkdrop.all('/ajax/settings(/*)?', post.list);
 http.createServer(inkdrop).listen(inkdrop.get('port'), function() {
 	console.log('InkDrop listening on port ' + inkdrop.get('port'));
 });
+
+// LiveReload
+livereload.createServer({
+	exts: ['less', 'jade'],
+	exclusions: ['.git/', 'node_modules']
+}).watch(__dirname);
