@@ -56,8 +56,10 @@ $(document).ready( () ->
 			start = $(this).get(0).selectionStart
 			end = $(this).get(0).selectionEnd
 			text = $(this).val()
-			
+
 			$(this).val(text.substring(0, start) + '\t' + text.substring(end))
 			$(this).get(0).selectionEnd = start + 1
+
+			$(this).trigger('input')
 	)
 )
