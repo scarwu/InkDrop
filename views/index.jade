@@ -15,7 +15,8 @@ html(lang='zh-tw')
 	body
 		div(id='main')
 			header(id='header')
-				h1 InkDrop
+				h1
+					a(href='/') InkDrop
 			nav(id='navigation')
 				a(href='#/dashboard')
 					span Dashboard
@@ -26,33 +27,41 @@ html(lang='zh-tw')
 				a(href='#/logout')
 					span Logout
 			div(id='container')
-				div(class='dashboard')
-					h2 Dashboard
-					div(class='content')
-						div(class='Posts')
-							h3 Posts
-						div(class='Tags')
-							h3 Tags
-						div(class='Categories')
-							h3 Categories
-				div(class='editor')
-					h2 Editor
-					div(class='content')
-						div(class='list')
-						div(class='')
-							textarea(class='input')
-							div(class='output')
-				div(class='settings')
-					h2 Settings
-					div(class='content')
-						div(class='account')
-							h3 Account
-						div(class='blog')
-							h3 Blog
-						div(class='general')
-							h3 General
-						div(class='deploy')
-							h3 Deploy
+
+		script(language='text/template' id='dashboard_template')
+			div(class='dashboard')
+				h2 Dashboard
+				div(class='content')
+					div(class='Posts')
+						h3 Posts
+					div(class='Tags')
+						h3 Tags
+					div(class='Categories')
+						h3 Categories
+
+		script(language='text/template' id='editor_template')
+			div(class='editor')
+				h2 Editor
+				div(class='content')
+					div(class='list')
+						h3 Article
+						h3 Static Page
+					div(class='view')
+						textarea(class='input')
+						div(class='output')
+
+		script(language='text/template' id='settings_template')
+			div(class='settings')
+				h2 Settings
+				div(class='content')
+					div(class='account')
+						h3 Account
+					div(class='blog')
+						h3 Blog
+					div(class='general')
+						h3 General
+					div(class='deploy')
+						h3 Deploy
 
 		script(src='/javascripts/vendor/jquery-2.0.3.min.js')
 		script(src='/javascripts/vendor/underscore-1.5.2.min.js')

@@ -29,12 +29,12 @@ inkdrop.use(require('less-middleware') ({
 
 inkdrop.use(require('connect-coffee-script') ({ 
 	src: path.join(__dirname, 'public'),
-	compress: true
+	compress: true,
+	bare: true
 }));
 
 inkdrop.use(express.static(path.join(__dirname, 'public')));
 
-// development only
 if ('development' == inkdrop.get('env')) {
 	inkdrop.use(express.errorHandler());
 }
