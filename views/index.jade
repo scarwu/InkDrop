@@ -29,7 +29,7 @@ html(lang='zh-tw')
 			div(id='container')
 
 		script(language='text/template' id='dashboard_template')
-			div(class='dashboard')
+			div(id='dashboard')
 				h2 Dashboard
 				div(class='content')
 					div(class='Posts')
@@ -40,18 +40,23 @@ html(lang='zh-tw')
 						h3 Categories
 
 		script(language='text/template' id='editor_template')
-			div(class='editor')
+			div(id='editor')
 				h2 Editor
 				div(class='content')
 					div(class='list')
 						h3 Article
 						h3 Static Page
 					div(class='view')
-						textarea(class='input')
-						div(class='output')
+						div(class='source')
+							pre(class='text_mirror')
+								span
+									br
+							textarea(class='text')
+						div(class='preview')
+							div(class='html')
 
 		script(language='text/template' id='settings_template')
-			div(class='settings')
+			div(id='settings')
 				h2 Settings
 				div(class='content')
 					div(class='account')
