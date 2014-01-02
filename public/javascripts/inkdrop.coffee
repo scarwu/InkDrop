@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 inkdropView = Backbone.View.extend({
 	initialize: () ->
@@ -41,9 +41,25 @@ $(document).ready( () ->
 
 	Backbone.history.start()
 
-	$('.editor .input').on('input', () -> 
-		output = markdown.toHTML($(this).val())
-		$('.editor .output').html(output)
-		console.log(output)
+	$('#editor .text').on('input', () -> 
+		text = $(this).val()
+		html = markdown.toHTML(text)
+
+		$('#editor .text_mirror').html(text + '\n ')
+		$('#editor .html').html(html)
+	).on('keydown', (e) ->
+		keyCode = e.keyCode || e.which
+
+		if keyCode == 9
+			e.preventDefault()
+
+			start = $(this).get(0).selectionStart
+			end = $(this).get(0).selectionEnd
+			text = $(this).val()
+
+			$(this).val(text.substring(0, start) + '\t' + text.substring(end))
+			$(this).get(0).selectionEnd = start + 1
+
+			$(this).trigger('input')
 	)
 )

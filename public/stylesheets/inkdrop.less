@@ -49,6 +49,7 @@ textarea {
 
 body {
 	background-color: #efefef;
+	padding-bottom: 25px;
 }
 
 @page-padding: 0 100px;
@@ -79,17 +80,70 @@ body {
 
 #container {
 	padding: @page-padding;
-	
-	.editor {
-		.input,
-		.output {
-			margin: 0;
-			padding: 0;
-			width: 50%;
-			height: 200px;
-			background-color: #ffffff;
-			display: inline-block;
-			border: none;
-		}
+}
+
+#editor {
+	@editor_padding: 10px;
+
+	.view {
+		background-color: #ffffff;
+		overflow: hidden;
+	}
+
+	.source {
+		position: relative;
+	}
+
+	.source,
+	.preview {
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 50%;
+		display: inline-block;
+	}
+
+	.text {
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		resize : none;
+		overflow: hidden;
+		border: none;
+		position: absolute;
+		top: @editor_padding;
+		bottom: @editor_padding;
+		left: @editor_padding;
+		right: @editor_padding;
+	}
+
+	.text:focus {
+		outline : 0; /* Chrome */
+	}
+
+	.text_mirror {
+		margin: @editor_padding;
+		color: transparent;
+	}
+
+	.html {
+		overflow: hidden;
+		margin: @editor_padding;
+	}
+
+	.text,
+	.text_mirror {
+		display: block;
+		font-family: 'monospace', 'Courier';
+		font-size: 12pt;
+		line-height: 12pt;
+	}
+
+	.text,
+	.text_mirror,
+	.html {
+		min-height: 150px;
+		white-space: pre-wrap;
+		word-wrap: break-word;
 	}
 }
