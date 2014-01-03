@@ -24,16 +24,19 @@ inkdrop.use(inkdrop.router);
 
 inkdrop.use(require('less-middleware') ({ 
 	src: path.join(__dirname, 'public'),
+	dest: path.join(__dirname, 'tmp'),
 	compress: true
 }));
 
 inkdrop.use(require('connect-coffee-script') ({ 
 	src: path.join(__dirname, 'public'),
+	dest: path.join(__dirname, 'tmp'),
 	compress: true,
 	bare: true
 }));
 
 inkdrop.use(express.static(path.join(__dirname, 'public')));
+inkdrop.use(express.static(path.join(__dirname, 'tmp')));
 
 if ('development' == inkdrop.get('env')) {
 	inkdrop.use(express.errorHandler());
