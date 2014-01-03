@@ -61,6 +61,10 @@ body {
 	height: @header-height;
 	line-height: @header-height;
 
+	a {
+		text-decoration: none;
+	}
+
 	h1 {
 		margin: 0;
 	}
@@ -75,6 +79,11 @@ body {
 		display: inline-block;
 		height: @header-height;
 		line-height: @header-height;
+		text-decoration: none;
+
+		span {
+			padding-left: 10px;
+		}
 	}
 }
 
@@ -143,7 +152,7 @@ body {
 	.text_mirror,
 	.html {
 		min-height: 150px;
-		white-space: pre-wrap;
+		// white-space: pre-wrap;
 		word-wrap: break-word;
 	}
 }

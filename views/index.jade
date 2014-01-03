@@ -6,11 +6,12 @@ html(lang='zh-tw')
 		
 		title InkDrop
 		
-		link(rel='stylesheet' href='/stylesheets/normalize.css')
-		link(rel='stylesheet' href='/stylesheets/solarized_dark.css')
-		link(rel='stylesheet' href='/stylesheets/inkdrop.css')
+		link(rel='stylesheet' href='/css/font-awesome-4.0.3.min.css')
+		link(rel='stylesheet' href='/css/normalize.css')
+		link(rel='stylesheet' href='/css/solarized_dark.css')
+		link(rel='stylesheet' href='/css/inkdrop.css')
 
-		script(src='/javascripts/vendor/modernizr-2.7.1-custom.min.js')
+		script(src='/js/vendor/modernizr-2.7.1-custom.min.js')
 
 	body
 		div(id='main')
@@ -19,12 +20,16 @@ html(lang='zh-tw')
 					a(href='/') InkDrop
 			nav(id='navigation')
 				a(href='#/dashboard')
+					i(class='fa fa-bar-chart-o')
 					span Dashboard
 				a(href='#/editor')
+					i(class='fa fa-pencil-square-o')
 					span Editor
 				a(href='#/settings')
+					i(class='fa fa-cogs')
 					span Settings
 				a(href='#/logout')
+					i(class='fa fa-sign-out')
 					span Logout
 			div(id='container')
 
@@ -49,7 +54,7 @@ html(lang='zh-tw')
 					div(class='view')
 						div(class='source')
 							pre(class='text_mirror')
-							textarea(class='text')
+							textarea(class='text' spellcheck='false')
 						div(class='preview')
 							div(class='html')
 
@@ -66,9 +71,9 @@ html(lang='zh-tw')
 					div(class='deploy')
 						h3 Deploy
 
-		script(src='/javascripts/vendor/jquery-2.0.3.min.js')
-		script(src='/javascripts/vendor/underscore-1.5.2.min.js')
-		script(src='/javascripts/vendor/backbone-1.1.0.min.js')
-		script(src='/javascripts/vendor/markdown-0.6.0-beta1.min.js')
-		script(src='/javascripts/vendor/highlight-7.5.pack.js')
-		script(src='/javascripts/inkdrop.js')
+		script(src='/js/vendor/jquery-2.0.3.min.js')
+		script(src='/js/vendor/underscore-1.5.2.min.js')
+		script(src='/js/vendor/backbone-1.1.0.min.js')
+		script(src='/js/vendor/markdown-0.6.0-beta1.min.js')
+		script(src='/js/vendor/highlight-7.5.pack.js')
+		script(src='/js/inkdrop.js')
