@@ -6,7 +6,7 @@ html(lang='zh-tw')
 		
 		title InkDrop
 		
-		link(rel='stylesheet' href='/css/font-awesome.min.css')
+		link(rel='stylesheet' href='/css/font-awesome-4.0.3.min.css')
 		link(rel='stylesheet' href='/css/normalize.css')
 		link(rel='stylesheet' href='/css/solarized_dark.css')
 		link(rel='stylesheet' href='/css/inkdrop.css')
@@ -20,21 +20,17 @@ html(lang='zh-tw')
 					a(href='/') InkDrop
 			nav(id='navigation')
 				a(href='#/dashboard')
-					span 
-						i(class='fa fa-bar-chart-o')
-						='Dashboard'
+					i(class='fa fa-bar-chart-o')
+					span Dashboard
 				a(href='#/editor')
-					span
-						i(class='fa fa-pencil-square-o')
-						='Editor'
+					i(class='fa fa-pencil-square-o')
+					span Editor
 				a(href='#/settings')
-					span
-						i(class='fa fa-cogs')
-						='Settings'
+					i(class='fa fa-cogs')
+					span Settings
 				a(href='#/logout')
-					span 
-						i(class='fa fa-sign-out')
-						='Logout'
+					i(class='fa fa-sign-out')
+					span Logout
 			div(id='container')
 
 		script(language='text/template' id='dashboard_template')

@@ -43,6 +43,10 @@ if ('development' == inkdrop.get('env')) {
 }
 
 // Route Setting
+inkdrop.all('*.(coffee|less)', function (req, res) {
+	res.send(404);
+});
+
 inkdrop.get('/', routes.index);
 inkdrop.all('/ajax/dashboard(/*)?', post.list);
 inkdrop.all('/ajax/posts(/*)?', post.list);
