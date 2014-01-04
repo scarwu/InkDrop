@@ -34,6 +34,13 @@ inkdropRouter = Backbone.Router.extend({
 		
 })
 
+htmlEntities = (str) ->
+	return String(str)
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+
 $(document).ready( () ->
 	window.inkdropView = new inkdropView
 	window.inkdropModel = new inkdropModel
@@ -45,7 +52,7 @@ $(document).ready( () ->
 		text = $(this).val()
 		html = markdown.toHTML(text)
 
-		$('#editor .text_mirror').html(text + '\n ')
+		$('#editor .text_mirror').html(htmlEntities(text + '\n '))
 		$('#editor .html').html(html)
 	).on('keydown', (e) ->
 		keyCode = e.keyCode || e.which
