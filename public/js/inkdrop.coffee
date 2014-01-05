@@ -48,13 +48,13 @@ $(document).ready( () ->
 
 	Backbone.history.start()
 
-	$('#editor .text').on('input', () -> 
+	$('#container').delegate('#editor .text', 'input', () -> 
 		text = $(this).val()
 		html = markdown.toHTML(text)
 
 		$('#editor .text_mirror').html(htmlEntities(text + '\n '))
 		$('#editor .html').html(html)
-	).on('keydown', (e) ->
+	).delegate('#editor .text', 'keydown', (e) ->
 		keyCode = e.keyCode || e.which
 
 		if keyCode == 9
