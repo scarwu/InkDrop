@@ -38,11 +38,17 @@ html(lang='zh-tw')
 				h2 Dashboard
 				div(class='content')
 					div(class='Posts')
-						h3 Posts
+						h3
+							i(class='fa fa-pencil')
+							span Posts
 					div(class='Tags')
-						h3 Tags
+						h3
+							i(class='fa fa-tags')
+							span Tags
 					div(class='Categories')
-						h3 Categories
+						h3
+							i(class='fa fa-folder-open')
+							span Categories
 
 		script(language='text/template' id='editor_template')
 			div(id='editor')
@@ -64,12 +70,63 @@ html(lang='zh-tw')
 				div(class='content')
 					div(class='account')
 						h3 Account
+						label
+							span Username
+							input
+						label
+							span Password
+							input(type='password')
+						label
+							span Confirm Password
+							input(type='password')
 					div(class='blog')
 						h3 Blog
+						div
+							h4 Information
+							label
+								span Name
+								input
+							label
+								span Slogan
+								input
+							label
+								span Description
+								input
+							label
+								span Keywords
+								input
+							label
+								span Footer
+								input
+						div
+							h4 Host
+							label
+								span Base Path
+								input
+							label
+								span Custom DNS
+								input
+							label
+								span Theme
+								input
 					div(class='general')
 						h3 General
 					div(class='deploy')
 						h3 Deploy
+						div
+							h4 Github
+							label
+								span Account
+								input
+							label
+								span Repository
+								input
+							label
+								span Branch
+								input
+							label
+								span CNAME
+								input
 
 		script(src='/js/vendor/jquery-2.0.3.min.js')
 		script(src='/js/vendor/underscore-1.5.2.min.js')

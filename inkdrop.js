@@ -5,7 +5,9 @@ var express = require('express'),
 	path = require('path');
 
 var routes = require('./routes'),
-	post = require('./routes/post');
+	routeDashboard = require('./routes/dashboard'),
+	routePost = require('./routes/post'),
+	routeSetting = require('./routes/setting');
 
 var inkdrop = express();
 
@@ -48,9 +50,9 @@ inkdrop.all('*.(coffee|less)', function (req, res) {
 });
 
 inkdrop.get('/', routes.index);
-inkdrop.all('/ajax/dashboard(/*)?', post.list);
-inkdrop.all('/ajax/posts(/*)?', post.list);
-inkdrop.all('/ajax/settings(/*)?', post.list);
+inkdrop.all('/ajax/dashboard(/*)?', routeDashboard.init);
+inkdrop.all('/ajax/post(/*)?', routePost.init);
+inkdrop.all('/ajax/setting(/*)?', routeSetting.init);
 
 http.createServer(inkdrop).listen(inkdrop.get('port'), function () {
 	console.log('InkDrop listening on port ' + inkdrop.get('port'));
