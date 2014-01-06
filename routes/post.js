@@ -13,6 +13,6 @@ module.exports = {
 
 var methods = {
 	get: function (req, res) {
-		res.send('a');
+		res.send(JSON.stringify(req.params));
 	}
 };

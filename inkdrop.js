@@ -50,9 +50,9 @@ inkdrop.all('*.(coffee|less)', function (req, res) {
 });
 
 inkdrop.get('/', routes.index);
-inkdrop.all('/ajax/dashboard(/*)?', routeDashboard.init);
-inkdrop.all('/ajax/post(/*)?', routePost.init);
-inkdrop.all('/ajax/setting(/*)?', routeSetting.init);
+inkdrop.all('/ajax/dashboard(?:/*)?', routeDashboard.init);
+inkdrop.all('/ajax/post(?:/*)?', routePost.init);
+inkdrop.all('/ajax/setting(?:/*)?', routeSetting.init);
 
 http.createServer(inkdrop).listen(inkdrop.get('port'), function () {
 	console.log('InkDrop listening on port ' + inkdrop.get('port'));
